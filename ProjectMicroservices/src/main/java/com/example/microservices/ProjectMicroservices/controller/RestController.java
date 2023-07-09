@@ -2,8 +2,13 @@ package com.example.microservices.ProjectMicroservices.controller;
 
 import com.example.microservices.ProjectMicroservices.entities.ToDo;
 import com.example.microservices.ProjectMicroservices.entities.User;
+import com.example.microservices.ProjectMicroservices.utilities.JsonResponsebody;
+import com.example.microservices.ProjectMicroservices.utilities.JwtUtils;
 import com.example.microservices.ProjectMicroservices.utilities.ToDoValidator;
 import jakarta.validation.Valid;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -17,6 +22,15 @@ import org.springframework.web.bind.annotation.ResponseBody;
 //RestController will understand string must be string and user must be user
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
+
+    @Autowired
+    private JsonResponsebody jsonResponsebody;
+
+    @Autowired
+    private JwtUtils jwtUtils;
+
+
+
     @RequestMapping("/hello")
     public String sayHello()
     {
@@ -91,6 +105,15 @@ public class RestController {
 
         return "ToDo Description " + toDo.getDescription() + " ToDo Priority " + toDo.getPriority();
     }
+
+//ResponseEntity which helps in providing flexible response not fixed like String, User class(single object)
+//@RequestMapping("/exampleURL")
+//    public ResponseEntity<JsonResponsebody> returnStandardResponse()
+//{
+//
+//    return ResponseEntity.status(HttpStatus.OK).header("jwt",jwt).body(new JsonResponsebody());
+//}
+
 
 }
 
