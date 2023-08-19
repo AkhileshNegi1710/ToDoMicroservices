@@ -15,9 +15,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.Date;
 
-@Log
+
 @SpringBootApplication
-public class ProjectMicroservicesApplication implements CommandLineRunner {
+public class ProjectMicroservicesApplication implements CommandLineRunner
+//public class ProjectMicroservicesApplication
+{
 
 //Autowired to inject concrete class.
 //UserDaoImpl
@@ -33,13 +35,13 @@ public class ProjectMicroservicesApplication implements CommandLineRunner {
 	EncryptUtils encryptUtils;
 
 //	add logger
-//	private static final Logger log= LoggerFactory.getLogger(ProjectMicroservicesApplication.class);
+	private static final Logger log= LoggerFactory.getLogger(ProjectMicroservicesApplication.class);
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectMicroservicesApplication.class, args);
 	}
 
 	@Override
-//three dots used in String to pass multiple arguments to be passed when function is called.
+////three dots used in String to pass multiple arguments to be passed when function is called.
 	public void run(String... strings) throws Exception
 	{
 //everything here is implemented before our Microservice will be available for HTTP request

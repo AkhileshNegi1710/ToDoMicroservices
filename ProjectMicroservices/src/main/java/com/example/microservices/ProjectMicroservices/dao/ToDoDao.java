@@ -12,4 +12,6 @@ import java.util.List;
 public interface ToDoDao extends JpaRepository<ToDo, Integer> {
 //    to find ToDoClass using ID using name Strategy method
     List<ToDo> findByFkUser(String email);
+
+
 }

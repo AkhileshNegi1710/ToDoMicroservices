@@ -9,6 +9,8 @@ import lombok.*;
 import org.hibernate.annotations.NotFound;
 import org.springframework.boot.autoconfigure.web.WebProperties;
 
+import java.util.Optional;
+
 //Below is the entity table define in db
 //JPA
 //LOMBOK
@@ -26,18 +28,16 @@ public class User {
     @NotNull @NotBlank @NotEmpty
     private String email;
 
-
     @Column(name="NAME")
     @Getter @Setter
     @NotNull @NotBlank @NotEmpty
     private String name;
 
-
-
     @Column(name = "PASSWORD")
     @Getter @Setter
     @NotNull @NotBlank @NotEmpty
     private String password;
+
 
 
 }
